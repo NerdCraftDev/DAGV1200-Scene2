@@ -1,6 +1,6 @@
 //Maya ASCII 2024 scene
 //Name: Outdoor_Scene.ma
-//Last modified: Sat, Feb 22, 2025 01:43:53 PM
+//Last modified: Sat, Feb 22, 2025 01:45:25 PM
 //Codeset: 1252
 requires maya "2024";
 requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" "mtoa" "5.3.4.1";
@@ -11,17 +11,17 @@ fileInfo "product" "Maya 2024";
 fileInfo "version" "2024";
 fileInfo "cutIdentifier" "202310181224-69282f2959";
 fileInfo "osv" "Windows 11 Pro v2009 (Build: 26100)";
-fileInfo "UUID" "63EB782C-4344-A787-D0FC-DA93CCF02FFD";
+fileInfo "UUID" "EED3A9CB-4FA9-6C31-C0BD-649D38104A4E";
 createNode transform -s -n "persp";
 	rename -uid "432F8B39-4CD4-1272-909A-EEA320C64E81";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 17.751332270179724 14.134221373682514 4.81674049012552 ;
-	setAttr ".r" -type "double3" -38.138352732299481 76.200000000001538 1.3333788533275599e-14 ;
+	setAttr ".t" -type "double3" 16.878075337680738 10.591865549889365 -0.48218076171592017 ;
+	setAttr ".r" -type "double3" -33.338352732202871 85.799999999948028 -4.3427539264538376e-14 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "9ACBA0D6-4CA2-1A6B-DFC8-79A3F5CE8F6A";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 21.647112489272665;
+	setAttr ".coi" 18.04585549485142;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -906,11 +906,19 @@ createNode mesh -n "FenceFoundationShape" -p "FenceFoundation";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
-	setAttr -s 5 ".pt";
+	setAttr -s 12 ".pt";
+	setAttr ".pt[0]" -type "float3" 0 0 -0.44419491 ;
+	setAttr ".pt[1]" -type "float3" 0 0 -0.44419491 ;
+	setAttr ".pt[2]" -type "float3" 0 0 -0.44419491 ;
+	setAttr ".pt[3]" -type "float3" 0 0 -0.44419491 ;
 	setAttr ".pt[4]" -type "float3" 0 0 -7.1525574e-07 ;
 	setAttr ".pt[5]" -type "float3" 0 0 -7.1525574e-07 ;
 	setAttr ".pt[6]" -type "float3" 0 0 -7.1525574e-07 ;
 	setAttr ".pt[7]" -type "float3" 0 0 -7.1525574e-07 ;
+	setAttr ".pt[12]" -type "float3" -0.70353335 0 0 ;
+	setAttr ".pt[13]" -type "float3" -0.70353335 0 0 ;
+	setAttr ".pt[14]" -type "float3" -0.70353335 0 0 ;
+	setAttr ".pt[15]" -type "float3" -0.70353335 0 0 ;
 createNode transform -n "Fence";
 	rename -uid "21B95E99-4712-D2BC-D509-E5B9A12A9B58";
 	setAttr ".rp" -type "double3" 2.75 1.2 -0.9 ;
@@ -943,13 +951,13 @@ createNode mesh -n "FenceShape" -p "Fence";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
-	setAttr -s 16 ".pt[0:15]" -type "float3"  0.055762153 0.2 -0.094473206 
-		-0.055762153 0.2 -0.094473206 0.055762153 1.0000002 -0.094473206 -0.055762153 1.0000002 
-		-0.094473206 0.055762153 1.0000002 -0.055581558 -0.055762153 1.0000002 -0.055412058 
+	setAttr -s 16 ".pt[0:15]" -type "float3"  0.055762153 0.2 -0.53866804 
+		-0.055762153 0.2 -0.53866804 0.055762153 1.0000002 -0.53866804 -0.055762153 1.0000002 
+		-0.53866804 0.055762153 1.0000002 -0.055581558 -0.055762153 1.0000002 -0.055412058 
 		0.055762153 0.2 -0.055581558 -0.055762153 0.2 -0.055412058 0.054975823 1.0000002 
 		0.055581652 -0.055762153 1.0000002 0.055581652 -0.055762153 0.2 0.055581652 0.054975823 
-		0.2 0.055581652 0.067426078 1.0000002 -0.055581652 0.067426078 0.2 -0.055581652 0.067426078 
-		1.0000002 0.055581652 0.067426078 0.2 0.055581652;
+		0.2 0.055581652 -0.63610739 1.0000002 -0.055581652 -0.63610739 0.2 -0.055581652 -0.63610739 
+		1.0000002 0.055581652 -0.63610739 0.2 0.055581652;
 	setAttr -s 16 ".vt[0:15]"  2.6500001 0.5 0.85000002 2.8499999 0.5 0.85000002
 		 2.6500001 0.70000005 0.85000002 2.8499999 0.70000005 0.85000002 2.6500001 0.70000005 -2.65000081
 		 2.8499999 0.70000005 -2.65000081 2.6500001 0.5 -2.65000081 2.8499999 0.5 -2.65000081
@@ -1232,7 +1240,7 @@ createNode transformGeometry -n "transformGeometry6";
 	setAttr ".txf" -type "matrix" 0.89181755280866559 0 -0.45239523925696096 0 0 1 0 0
 		 0.45239523925696096 0 0.89181755280866559 0 -1.496422871275068 -0.27009037403179814 0.18283889826340793 1;
 createNode mayaUsdLayerManager -n "mayaUsdLayerManager1";
-	rename -uid "DE43B06F-40E0-AA4B-5AB7-0FB4267C31B3";
+	rename -uid "2DFF8B81-4B2F-F8E7-F894-59895847DCD8";
 	setAttr ".sst" -type "string" "";
 select -ne :time1;
 	setAttr ".o" 1;
